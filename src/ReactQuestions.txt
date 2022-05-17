@@ -1,0 +1,76 @@
+=> React Hooks
+    useState - This hook allows us to have state variable and manage it in functional
+    component.
+
+    useEffect - It is used to perform some side-effects (like COM update) or perform 
+    some action after component renders or re-renders. Using dependency [], we can also
+    restrict unwanted re-rendering of entire component.
+
+    useContext - To overcome problem of props-drilling we use useContext Hooks.
+    It is used to store data that can be accessed throughout the component hierarchy without 
+    passing props to each level of heirarchy.
+
+    useReducer - useState is a basic Hook for managing simple state transformation and
+    useReducer is an additional Hook for managing more complex state logic. It accept a
+    reducer functiona and an initial state and return state value and a dispatch that allows us
+    to call reducer.
+
+    useMemo - useMemo is hook that allows you to memoize expensive function so that you can
+    avoid calling it every render until its dependency changes. Once dependency changes react
+    again re-memoize the function. It is used for performance optimization. It will return 
+    cached value if dependency does not changes.
+
+    useCallback - useCallback Hook is used to cache the callback function. It is used to avoid
+    creation of callback function on every render. It is used when a child component having 
+    React.Memo accept / depend on callback function as props. If callback function created 
+    after every render child component also re-renders as props changes. Because of this issue 
+    we use useCallback hooks as it prevent functions to be created after render.
+
+    useRef - In React there are 2 form inputs - Controlled and Uncontrolled. It is used for
+    Uncontrolled form inputs. If we do not want to React to control form inputs, we use useRef.
+    It allows you to persist values between renders. Any change in its value will not cause
+    re-render.
+
+    useLayoutEffect - This function get trigerred syncronously before DOM mutations are painted. 
+    useEffect is called after DOM mutations are painted. useLayoutEffect will be called when the 
+    DOM is ready and ready too be painted. We can use it to read layout from DOM.
+
+    useImperativeHandle - useImperativeHandle allows you to pass values and functions from a Child 
+    component back up to a Parent using a ref . From there, the Parent can either use it itself 
+    or pass it to another Child. Note that you can only pass a ref as a prop to a child that wraps
+     its component in forwardRef .
+
+    useDebugValue - useDebugValue is a simple inbuilt Hook that provides more information about 
+    the internal logic of a custom Hook within the React DevTools. It allows you to display 
+    additional, helpful information next to your custom Hooks, with optional formatting.
+
+    useDeferredValue - React 18 Hook
+
+    useId - React 18 Hook
+
+    useTransition - React 18 Hook
+
+    useSyncExternalStore - React 18 Hook
+
+    useInsertionEffect - React 18 Hook
+
+
+=> useEffect vs useMemo Hooks
+useEffect is basically a react lifecycle hook that is called when component is created, 
+updated or unmounted. 
+When you want to stop re-rendering of entire component you have to use useEffect.
+It is a data hook
+
+useMemo is only code whenever you want to update specific part of your component.
+When you want to stop a piece of code to re-render you need to use useMemo. When you want to 
+control re-rendering of some lines of your component.
+It is a memoized hook
+
+=> useMemo and useCallback
+useCallback and useMemo both expect a function and an array of dependency. The difference
+is that useCallback returns its function when the dependency changes while useMemo calls 
+its function and returns the value.
+
+
+
+
